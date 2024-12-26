@@ -65,7 +65,7 @@ export default function Home() {
         </div>
 
         <div className="text-center text-gray-500 font-light mt-4">
-          {getCurrentWeek()} • 2songs2photos.com
+          {getCurrentWeek()} 2songs2photos.com
         </div>
       </div>
 
