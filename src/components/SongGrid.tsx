@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface SongGridProps {
     song: Song | null
     onClick: () => void
@@ -12,10 +14,11 @@ interface SongGridProps {
       >
         {song ? (
           <div className="relative w-full h-full">
-            <img
+            <Image
               src={song.albumArt}
               alt={song.album}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
               <p className="font-medium truncate">{song.title}</p>

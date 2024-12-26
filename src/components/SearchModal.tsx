@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Song } from '@/types'
+import Image from 'next/image'
 
 interface SearchModalProps {
   isOpen: boolean
@@ -86,11 +87,14 @@ export default function SearchModal({
                 className="flex items-center gap-4 p-3 hover:bg-gray-800 rounded-lg cursor-pointer"
                 onClick={() => handleSongSelect(song)}
               >
-                <img
-                  src={song.albumArt}
-                  alt={song.album}
-                  className="w-12 h-12 rounded"
-                />
+                <div className="relative w-12 h-12">
+                  <Image
+                    src={song.albumArt}
+                    alt={song.album}
+                    fill
+                    className="rounded object-cover"
+                  />
+                </div>
                 <div>
                   <p className="font-medium">{song.title}</p>
                   <p className="text-sm text-gray-400">{song.artist}</p>

@@ -1,5 +1,15 @@
 import { NextResponse } from 'next/server'
 
+interface SpotifyTrack {
+  id: string
+  name: string
+  artists: Array<{ name: string }>
+  album: {
+    name: string
+    images: Array<{ url: string }>
+  }
+}
+
 let accessToken: string | null = null
 let tokenExpiry: number = 0
 
@@ -62,7 +72,7 @@ export async function GET(request: Request) {
 
     const data = await response.json()
     
-    const tracks = data.tracks.items.map((track: any) => ({
+    const tracks = data.tracks.items.map((track: SpotifyTrack) => ({
       id: track.id,
       title: track.name,
       artist: track.artists[0].name,

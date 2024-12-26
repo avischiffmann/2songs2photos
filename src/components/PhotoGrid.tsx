@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface PhotoGridProps {
   photo: string | null
@@ -38,10 +39,11 @@ export default function PhotoGrid({ photo, onUpload }: PhotoGridProps) {
     >
       {photo ? (
         <div className="relative w-full h-full">
-          <img 
-            src={photo} 
-            alt="Uploaded" 
-            className="w-full h-full object-cover"
+          <Image
+            src={photo}
+            alt="Uploaded photo"
+            fill
+            className="object-cover"
           />
           {isHovered && (
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
