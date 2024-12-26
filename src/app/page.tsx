@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-black text-white p-4">
       <div className="max-w-2xl w-full bg-gray-900 rounded-xl p-6 border border-gray-800">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-0">
           {/* Songs row - two squares */}
           <div className="grid grid-cols-2 gap-6 aspect-[2/1]">
             {songs.map((song, index) => (
