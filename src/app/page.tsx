@@ -25,12 +25,21 @@ export default function Home() {
     setPhotos(newPhotos)
   }
 
+  const getCurrentWeek = () => {
+    const now = new Date()
+    return `Week of ${now.toLocaleDateString('en-US', { 
+      month: 'long', 
+      day: 'numeric',
+      year: 'numeric'
+    })}`
+  }
+
   return (
-    <main className="min-h-screen flex items-center justify-center bg-black text-white p-4">
-      <div className="max-w-2xl w-full bg-gray-900 rounded-xl p-6 border border-gray-800">
+    <main className="min-h-screen flex items-center justify-center bg-black text-white p-2">
+      <div className="max-w-3xl w-full bg-gray-900 rounded-xl p-4 border border-gray-800">
         <div className="flex flex-col gap-0">
           {/* Songs row - two squares */}
-          <div className="grid grid-cols-2 gap-6 aspect-[2/1]">
+          <div className="grid grid-cols-2 gap-4 aspect-[2/1]">
             {songs.map((song, index) => (
               <SongGrid
                 key={index}
@@ -44,7 +53,7 @@ export default function Home() {
           </div>
           
           {/* Photos row - two vertical columns */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4">
             {photos.map((photo, index) => (
               <PhotoGrid
                 key={index}
@@ -55,8 +64,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center text-gray-500 font-light mt-6">
-          2songs2photos.com
+        <div className="text-center text-gray-500 font-light mt-4">
+          {getCurrentWeek()} • 2songs2photos.com
         </div>
       </div>
 
