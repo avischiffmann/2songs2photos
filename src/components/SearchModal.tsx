@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Song } from '@/types'
 import Image from 'next/image'
+import { Song } from '@/types'
 
 interface SearchModalProps {
   isOpen: boolean

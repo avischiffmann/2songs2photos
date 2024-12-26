@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Song } from '@/types'
 
 interface SongGridProps {
     song: Song | null
