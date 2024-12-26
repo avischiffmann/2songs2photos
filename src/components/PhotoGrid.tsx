@@ -34,7 +34,7 @@ export default function PhotoGrid({ photo, onUpload }: PhotoGridProps) {
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="aspect-[3/4] bg-gray-800 rounded-lg overflow-hidden relative cursor-pointer 
+      className="aspect-[2/3] bg-gray-800 rounded-lg overflow-hidden relative cursor-pointer 
                  hover:bg-gray-700 transition-colors border border-gray-700"
     >
       {photo ? (
