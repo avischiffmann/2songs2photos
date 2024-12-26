@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SongGrid from '@/components/SongGrid'
 import PhotoGrid from '@/components/PhotoGrid'
 import SearchModal from '@/components/SearchModal'
+import { Song } from '@/types'
 
 export default function Home() {
   const [songs, setSongs] = useState<Array<Song | null>>([null, null])
