@@ -35,12 +35,12 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-black text-white p-8">
-      <div className="max-w-2xl w-full bg-gray-900 rounded-xl p-8 border border-gray-800">
-        {/* Container for both grids with increased spacing */}
-        <div className="space-y-12">
+    <main className="min-h-screen flex items-center justify-center bg-black text-white p-4 sm:p-8">
+      <div className="max-w-2xl w-full bg-gray-900 rounded-xl p-4 sm:p-8 border border-gray-800">
+        {/* Container for both grids with responsive spacing */}
+        <div className="space-y-6 sm:space-y-12">
           {/* Songs row - two squares */}
-          <div className="grid grid-cols-2 gap-6 h-[250px]">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 h-[250px]">
             {songs.map((song, index) => (
               <SongGrid
                 key={index}
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
           
           {/* Photos row - two vertical columns */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {photos.map((photo, index) => (
               <PhotoGrid
                 key={index}
@@ -65,10 +65,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center space-y-2 mt-8">
-          <div className="text-gray-500 font-light">
-            {getCurrentWeek()} • 2songs2photos.com
-          </div>
+        <div className="text-center text-gray-500 font-light mt-4 sm:mt-8">
+          {getCurrentWeek()} • 2songs2photos.com
         </div>
       </div>
 
